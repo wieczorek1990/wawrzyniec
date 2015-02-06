@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>św. Wawrzyniec, Pniewy</title>
 
-    <link rel="stylesheet" type="text/css" href="css/app.css">
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,latin-ext' rel='stylesheet'
-          type='text/css'>
+    <link rel="stylesheet" href="css/app.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,latin-ext' rel='stylesheet'>
+
+    <!-- Fotorama -->
+    <link  href="bower_components/fotorama/fotorama.css" rel="stylesheet">
 
     <!-- Bootstrap -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="bower_components/swipebox/src/css/swipebox.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,8 +26,9 @@
 </head>
 <body>
 
-<div class="row">
-    <div class="col-lg-offset-3 col-lg-2">
+<div class="row grey">
+    <div class="col-lg-3 white"></div>
+    <div class="col-lg-2">
         <nav class="navbar navbar-default" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -39,17 +44,17 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="text collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Podstawowe informacje <b
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="info-basic">Podstawowe informacje <b
                                 class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li class="active"><a href="#masses">Msze święte</a></li>
+                            <li><a href="#masses">Msze święte</a></li>
                             <li><a href="#office">Biuro parafialne</a></li>
                             <li><a href="#contact">Kontakt</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bieżące informacje <b
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="info-current">Bieżące informacje <b
                                 class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#announcements">Ogloszenia</a></li>
@@ -57,12 +62,12 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">O Kościele <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="info-about">O Kościele <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#history">Historia</a></li>
                             <li><a href="#priests">Duszpasterze</a></li>
                             <li><a href="#groups">Grupy duszpasterskie</a></li>
-                            <li><a href="#cementary">Cmentarz</a></li>
+                            <li><a href="#cemetery">Cmentarz</a></li>
                             <li><a href="#gallery">Galeria</a></li>
                         </ul>
                     </li>
@@ -72,7 +77,13 @@
         </nav>
     </div>
     <div class="col-lg-4">
-        <img class="logo-image" src="img/wawrzyniec.jpg">
+        <div class="fotorama logo-image" data-loop="true" data-autoplay="true">
+            <img src="img/logo/1.jpg">
+            <img src="img/logo/2.jpg">
+            <img src="img/logo/3.jpg">
+            <img src="img/logo/4.jpg">
+            <img src="img/logo/5.jpg">
+        </div>
     </div>
 </div>
 <div class="row">
@@ -81,7 +92,7 @@
     </div>
 </div>
 <div class="content row">
-    <div class="col-lg-offset-4 col-lg-4">
+    <div id="content-col" class="col-lg-offset-4 col-lg-4">
         <div id="markdown"></div>
     </div>
 </div>
@@ -92,6 +103,8 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/marked/lib/marked.js"></script>
+<script src="bower_components/fotorama/fotorama.js"></script>
+<script src="bower_components/swipebox/src/js/jquery.swipebox.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
