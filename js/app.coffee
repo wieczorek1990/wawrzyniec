@@ -8,6 +8,7 @@ load = (hash) ->
   category = getCategory(hash)
   loadMarkdown(hash)
   selectActive(hash, category)
+  setTimeout(animateNavigation, 3000)
 
 loadMarkdown = (hash) ->
   $.get "md/#{hash}.md", (data) ->
@@ -30,6 +31,20 @@ getCategory = (hash) ->
     when 'masses', 'office', 'contacts' then 'info-basic'
     when 'announcements', 'intentions' then 'info-current'
     when 'history', 'priests', 'groups', 'cemetery', 'gallery' then 'info-about'
+    else 'home'
+
+animateNavigation = ->
+  $nav = $('nav')
+  backgroundColor = $nav.css('background-color');
+  $nav.animate({
+    backgroundColor: '#AAA'
+  }, 2000, ->
+    $nav.animate({
+      backgroundColor: backgroundColor
+    }, 2000, ->
+        setTimeout(animateNavigation, 3000)
+    )
+  )
 
 $ ->
   hash = getHash()
